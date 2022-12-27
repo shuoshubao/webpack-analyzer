@@ -13,3 +13,7 @@ module.exports = {
   plugins: [new WebpackAnalyzerPlugin()]
 }
 ```
+
+# Examples
+
+- https://shuoshubao.github.io/webpack-analyzer-plugin/

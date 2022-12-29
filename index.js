@@ -1,5 +1,5 @@
 const { readFileSync, writeFileSync } = require('fs')
-const { join, resolve } = require('path')
+const { resolve } = require('path')
 const { pick, map, find, add, uniqBy } = require('lodash')
 const { deflateRaw } = require('pako')
 const { name: pkgName, version } = require('./package.json')
@@ -59,7 +59,7 @@ module.exports = class {
           `<script>window.WebpackData = '${deflateData(WebpackAnalyzeData)}'`
         )
 
-      writeFileSync(join(data.outputPath, this.options.filename), html)
+      writeFileSync(resolve(data.outputPath, this.options.filename), html)
 
       callback()
     })

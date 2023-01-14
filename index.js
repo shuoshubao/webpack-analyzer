@@ -1,6 +1,5 @@
 const { readFileSync, writeFileSync } = require('fs')
 const { resolve } = require('path')
-const { pick, map, find, add, uniqBy } = require('lodash')
 const { deflateRaw } = require('pako')
 const { name: pkgName, version } = require('./package.json')
 
@@ -10,6 +9,13 @@ const getFileContent = fileName => {
 
 const deflateData = data => {
   return deflateRaw(JSON.stringify(data).toString())
+}
+
+const pick = (obj, ...props) => {
+  return props.reduce((result, prop) => {
+    result[prop] = obj[prop]
+    return result
+  }, {})
 }
 
 const defaultOptions = {

@@ -53,6 +53,7 @@ module.exports = class {
       const WebpackAnalyzeData = { assetsByChunkName, assets, chunks, modules }
 
       const html = getFileContent('./index.html')
+        .replace('dist/index.css', `https://unpkg.com/${pkgName}@${version}/dist/index.css`)
         .replace('dist/index.js', `https://unpkg.com/${pkgName}@${version}/dist/index.js`)
         .replace(
           '<script src="docs/WebpackData.js">',

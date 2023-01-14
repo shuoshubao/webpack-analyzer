@@ -4,6 +4,7 @@ import { ConfigProvider, Layout, Typography, Checkbox, Input, theme } from 'antd
 import { Resizable } from 're-resizable'
 import * as echarts from 'echarts/core'
 import { last, map, add, sortBy } from 'lodash-es'
+import 'antd/dist/reset.css'
 import {
   SiderWidthKey,
   CollapsedKey,
